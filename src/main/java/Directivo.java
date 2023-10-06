@@ -1,0 +1,32 @@
+public class Directivo extends Empleado{
+    int codigoDespacho;
+
+    public Directivo(String nombre, String apellido, String direccion, String dni, int telefono, int codigoDespacho) {
+        super(nombre, apellido, direccion, dni, telefono);
+        this.codigoDespacho = codigoDespacho;
+    }
+
+    public Directivo(int codigoDespacho) {
+        this.codigoDespacho = codigoDespacho;
+    }
+
+    public int getCodigoDespacho() {
+        return codigoDespacho;
+    }
+
+    public void setCodigoDespacho(int codigoDespacho) {
+        this.codigoDespacho = codigoDespacho;
+    }
+
+    @Override
+    public String toString() {
+        return "Directivo{" +
+                "codigoDespacho=" + codigoDespacho +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", dni='" + dni + '\'' +
+                ", telefono=" + telefono +
+                '}';
+    }
+}
