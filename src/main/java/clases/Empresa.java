@@ -35,7 +35,8 @@ public class Empresa{
                 int telefono = ((EmpleadoAnotacion) annotation).telefono();
 
 
-
+                //crear get Empleados
+                //empresa.getEmpleados().add(EmpleadoAnotacion(nombre, apellidos);
 
             }
         }
