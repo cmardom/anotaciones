@@ -1,3 +1,7 @@
+package clases;
+
+import anotaciones.EmpleadoAnotacion;
+
 public class Empleado {
     String nombre;
     String apellido;

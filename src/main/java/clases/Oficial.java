@@ -1,3 +1,5 @@
+package clases;
+
 public class Oficial extends Operario{
     String categoria;
 
@@ -20,7 +22,7 @@ public class Oficial extends Operario{
 
     @Override
     public String toString() {
-        return "Oficial{" +
+        return "clases.Oficial{" +
                 "categoria='" + categoria + '\'' +
                 ", codigoTaller='" + codigoTaller + '\'' +
                 ", nombre='" + nombre + '\'' +

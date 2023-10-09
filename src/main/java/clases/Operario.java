@@ -1,3 +1,5 @@
+package clases;
+
 public class Operario extends Empleado{
     String codigoTaller;
 
@@ -20,7 +22,7 @@ public class Operario extends Empleado{
 
     @Override
     public String toString() {
-        return "Operario{" +
+        return "clases.Operario{" +
                 "codigoTaller='" + codigoTaller + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
