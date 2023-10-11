@@ -1,22 +1,22 @@
 package clases;
 
 public class Operario extends Empleado{
-    String codigoTaller;
+    int codigoTaller;
 
-    public Operario(String nombre, String apellido, String direccion, String dni, int telefono, String clase, String codigoTaller) {
+    public Operario(String nombre, String apellido, String direccion, String dni, int telefono, String clase, int codigoTaller) {
         super(nombre, apellido, direccion, dni, telefono, clase);
         this.codigoTaller = codigoTaller;
     }
 
-    public Operario(String codigoTaller) {
+    public Operario(int codigoTaller) {
         this.codigoTaller = codigoTaller;
     }
 
-    public String getCodigoTaller() {
+    public int getCodigoTaller() {
         return codigoTaller;
     }
 
-    public void setCodigoTaller(String codigoTaller) {
+    public void setCodigoTaller(int codigoTaller) {
         this.codigoTaller = codigoTaller;
     }
 

@@ -14,7 +14,8 @@ public @interface EmpleadoAnotacion {
     int telefono();
     String clase(); //para marcar la clase
     int codigoDespacho() default 0; //directivo
-    String perfil() default "VOID"; //operario
+    int codigoTaller() default 0; //operario
+    String perfil() default "VOID"; //técnico
     String categoria() default "VOID"; //oficial
 
 }

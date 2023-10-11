@@ -4,12 +4,12 @@ public class Tecnico extends Operario {
     String perfil;
 
 
-    public Tecnico(String nombre, String apellido, String direccion, String dni, int telefono, String clase, String codigoTaller) {
+    public Tecnico(String nombre, String apellido, String direccion, String dni, int telefono, String clase, int codigoTaller, String perfil) {
         super(nombre, apellido, direccion, dni, telefono, clase, codigoTaller);
-        String perfil = this.perfil;
+        perfil = this.perfil;
     }
 
-    public Tecnico(String codigoTaller) {
+    public Tecnico(int codigoTaller) {
         super(codigoTaller);
     }
 

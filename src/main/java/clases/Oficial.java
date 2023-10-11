@@ -3,19 +3,14 @@ package clases;
 public class Oficial extends Operario{
     String categoria;
 
-
-    public Oficial(String nombre, String apellido, String direccion, String dni, int telefono, String clase, String codigoTaller, String categoria) {
+    public Oficial(String nombre, String apellido, String direccion, String dni, int telefono, String clase, int codigoTaller, String categoria) {
         super(nombre, apellido, direccion, dni, telefono, clase, codigoTaller);
         this.categoria = categoria;
     }
 
-    public Oficial(String codigoTaller, String categoria) {
+    public Oficial(int codigoTaller, String categoria) {
         super(codigoTaller);
         this.categoria = categoria;
-    }
-
-    public Oficial(String codigoTaller) {
-        super(codigoTaller);
     }
 
     public String getCategoria() {

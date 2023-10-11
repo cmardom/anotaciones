@@ -9,8 +9,8 @@ import java.util.Set;
 //array de empleadoAnotacion dentro de empleados, que tiene valor inicial value()=por defecto
 @Empleados(value = {
         @EmpleadoAnotacion(nombre = "Paco", apellido = "Fernandez", direccion = "S. Alfonso", dni = "12435", telefono = 252356, clase = "Directivo", codigoDespacho = 2),
-        @EmpleadoAnotacion(nombre = "Sara", apellido = "Dominguez", direccion = "Avenida Mijas", dni = "456435", telefono = 952356, clase = "Oficial", categoria = "de primera"),
-        @EmpleadoAnotacion(nombre = "Rafa", apellido = "Martin", direccion = "San Juan", dni = "46598", telefono = 243546, clase = "Técnico", perfil = "mantenimiento")})
+        @EmpleadoAnotacion(nombre = "Sara", apellido = "Dominguez", direccion = "Avenida Mijas", dni = "456435", telefono = 952356, clase = "Oficial", codigoTaller = 2, categoria = "de primera"),
+        @EmpleadoAnotacion(nombre = "Rafa", apellido = "Martin", direccion = "San Juan", dni = "46598", telefono = 243546, clase = "Técnico", codigoTaller = 2, perfil = "mantenimiento")})
 //añadir directivo operario y oficial
 
 public class Empresa{
@@ -44,10 +44,13 @@ public class Empresa{
            String categoria = empleadoAnotHijo.categoria(); // oficial
 
             //empresa.getEmpleadoSet().add(new Empleado(nombre, apellidos, direccion, dni, telefono));
-           if (empleadoAnotHijo.clase().equals("Directivo")){
+           // Creamos directivo, tecnico y oficial
+           if (empleadoAnotHijo.clase().equalsIgnoreCase("Directivo")){
                empresa.getEmpleadoSet().add(new Directivo(nombre, apellido, direccion, dni, telefono, clase, codigoDespacho));
-           } else if (empleadoAnotHijo.clase().equals("Técnico")){
-               empresa.getEmpleadoSet().add(new Directivo(nombre, apellido, direccion, dni, telefono, clase, codigoTaller, perfil));
+           } else if (empleadoAnotHijo.clase().equalsIgnoreCase("Técnico") || empleadoAnotHijo.clase().equalsIgnoreCase("Tecnico")){
+               empresa.getEmpleadoSet().add(new Tecnico(nombre, apellido, direccion, dni, telefono, clase, codigoTaller, perfil));
+           } else if (empleadoAnotHijo.clase().equalsIgnoreCase("Oficial")){
+               empresa.getEmpleadoSet().add(new Oficial(nombre, apellido, direccion, dni, telefono, clase, codigoTaller, categoria));
            }
        }
 
