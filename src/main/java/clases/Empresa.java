@@ -4,6 +4,7 @@ import anotaciones.Empleados;
 
 import java.lang.annotation.Annotation;
 import java.util.HashSet;
+import java.util.Set;
 
 //array de empleadoAnotacion dentro de empleados, que tiene valor inicial value()=por defecto
 @Empleados(value = {@EmpleadoAnotacion(nombre = "Paco", apellido = "Fernandez", direccion = "S. Alfonso", dni = "12435", telefono = 252356),
@@ -11,11 +12,11 @@ import java.util.HashSet;
 
 public class Empresa{
     String nombre;
-    HashSet<Empleado> empleadoSet;
+    Set<Empleado> empleadoSet = new HashSet<>();
 
     public Empresa(String nombre) {
         this.nombre = nombre;
-        empleadoSet = new HashSet<>();
+        empleadoSet = this.empleadoSet;
     }
 
     //Cargador de anotaciones
@@ -24,22 +25,19 @@ public class Empresa{
         //empresa.getClass().getAnnotation(Empleados.class);
 
         //para devolver un array de anotaciones
-        Annotation[] anotaciones = empresa.getClass().getAnnotations();
-        for (Annotation annotation: anotaciones) {
-            if (annotation instanceof Empleados){
-                System.out.println(annotation);
-                String nombre = ((EmpleadoAnotacion) annotation).nombre();
-                String apellido = ((EmpleadoAnotacion) annotation).apellido();
-                String direccion = ((EmpleadoAnotacion) annotation).direccion();
-                String dni = ((EmpleadoAnotacion) annotation).dni();
-                int telefono = ((EmpleadoAnotacion) annotation).telefono();
+       Empleados empleadosAnotPadre = empresa.getClass().getAnnotation(Empleados.class);
+       EmpleadoAnotacion[] empleadoAnotHijos = empleadosAnotPadre.value();
 
+       for (EmpleadoAnotacion empleadoAnotHijo: empleadoAnotHijos){
+            String nombre = empleadoAnotHijo.nombre();
+            String apellidos = empleadoAnotHijo.apellido();
+            String dni = empleadoAnotHijo.dni();
+            String direccion = empleadoAnotHijo.direccion();
+            int telefono = empleadoAnotHijo.telefono();
 
-                //crear get Empleados
-                //empresa.getEmpleados().add(EmpleadoAnotacion(nombre, apellidos);
+            empresa.getEmpleadoSet().add(new Empleado(nombre, apellidos, direccion, dni, telefono));
+       }
 
-            }
-        }
     }
 
     public String getNombre() {
@@ -55,5 +53,13 @@ public class Empresa{
         return "clases.Empresa{" +
                 "nombre='" + nombre + '\'' +
                 '}';
+    }
+
+    public Set<Empleado> getEmpleadoSet() {
+        return empleadoSet;
+    }
+
+    public void setEmpleadoSet(Set<Empleado> empleadoSet) {
+        this.empleadoSet = empleadoSet;
     }
 }

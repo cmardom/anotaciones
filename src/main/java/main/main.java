@@ -11,5 +11,9 @@ public class main {
         Empresa empresa = new Empresa("Sanitubo");
         Empresa.cargadorDeContexto(empresa);
         System.out.println(empresa);
+
+        for (Empleado empleado: empresa.getEmpleadoSet()){
+            System.out.println(empleado);
+        }
     }
 }
