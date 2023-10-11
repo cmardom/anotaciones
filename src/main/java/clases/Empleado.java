@@ -8,13 +8,15 @@ public class Empleado {
     String direccion;
     String dni;
     int telefono;
+    String clase;
 
-    public Empleado(String nombre, String apellido, String direccion, String dni, int telefono) {
+    public Empleado(String nombre, String apellido, String direccion, String dni, int telefono, String clase) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         this.dni = dni;
         this.telefono = telefono;
+        this.clase = clase;
     }
 
     public Empleado() {

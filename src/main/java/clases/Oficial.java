@@ -4,8 +4,14 @@ public class Oficial extends Operario{
     String categoria;
 
 
-    public Oficial(String nombre, String apellido, String direccion, String dni, int telefono, String codigoTaller) {
-        super(nombre, apellido, direccion, dni, telefono, codigoTaller);
+    public Oficial(String nombre, String apellido, String direccion, String dni, int telefono, String clase, String codigoTaller, String categoria) {
+        super(nombre, apellido, direccion, dni, telefono, clase, codigoTaller);
+        this.categoria = categoria;
+    }
+
+    public Oficial(String codigoTaller, String categoria) {
+        super(codigoTaller);
+        this.categoria = categoria;
     }
 
     public Oficial(String codigoTaller) {

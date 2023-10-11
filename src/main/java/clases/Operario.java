@@ -3,8 +3,8 @@ package clases;
 public class Operario extends Empleado{
     String codigoTaller;
 
-    public Operario(String nombre, String apellido, String direccion, String dni, int telefono, String codigoTaller) {
-        super(nombre, apellido, direccion, dni, telefono);
+    public Operario(String nombre, String apellido, String direccion, String dni, int telefono, String clase, String codigoTaller) {
+        super(nombre, apellido, direccion, dni, telefono, clase);
         this.codigoTaller = codigoTaller;
     }
 

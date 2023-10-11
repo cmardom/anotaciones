@@ -12,5 +12,10 @@ public @interface EmpleadoAnotacion {
     String direccion();
     String dni();
     int telefono();
+    String clase(); //para marcar la clase
+    int codigoDespacho() default 0; //directivo
+    String perfil() default "VOID"; //operario
+    String categoria() default "VOID"; //oficial
+
 }
 
