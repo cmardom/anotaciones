@@ -62,6 +62,14 @@ public class Empleado {
         this.telefono = telefono;
     }
 
+    public String getClase() {
+        return clase;
+    }
+
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+
     @Override
     public String toString() {
         return "Empleado{" +
@@ -70,6 +78,7 @@ public class Empleado {
                 ", direccion='" + direccion + '\'' +
                 ", dni='" + dni + '\'' +
                 ", telefono=" + telefono +
+                ", clase='" + clase + '\'' +
                 '}';
     }
 }

@@ -8,10 +8,6 @@ public class Directivo extends Empleado{
         this.codigoDespacho = codigoDespacho;
     }
 
-    public Directivo(int codigoDespacho) {
-        this.codigoDespacho = codigoDespacho;
-    }
-
     public int getCodigoDespacho() {
         return codigoDespacho;
     }
@@ -22,13 +18,14 @@ public class Directivo extends Empleado{
 
     @Override
     public String toString() {
-        return "clases.Directivo{" +
+        return "Directivo{" +
                 "codigoDespacho=" + codigoDespacho +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", dni='" + dni + '\'' +
                 ", telefono=" + telefono +
+                ", clase='" + clase + '\'' +
                 '}';
     }
 }

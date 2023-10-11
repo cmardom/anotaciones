@@ -2,6 +2,9 @@ package anotaciones;
 
 import java.lang.annotation.*;
 
+/**
+ * Interfaz para la anotacion de Empleado, que recoge tambien los atributos propios de Directivo, Operario, Tecnico y Oficial
+ */
 @Documented
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
